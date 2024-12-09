@@ -1,7 +1,7 @@
-from download import setDownloadFolder, fitMapping
-from utils import getRaw, initTokenizer, delete
-from vocabulary import fitVocabulary
-from parse_wm import parseXML
+from modules.download import setDownloadFolder, fitMapping
+from modules.utils import getRaw, initTokenizer, delete
+from modules.vocabulary import fitVocabulary
+from modules.parse_wm import parseXML
 import bz2
 import os
 

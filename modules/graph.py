@@ -1,5 +1,5 @@
 from collections import Counter
-from utils import parseTime
+from modules.utils import parseTime
 import time
 import re
 
@@ -110,6 +110,7 @@ def storeRelations(file_paths, vocab, tokenizer, type):
     relations = {}
     for corpus in files:
         with open(corpus, 'r+', encoding='utf-8') as corpus:
+            print(f"Working in {i}-th file.")
             for linea in corpus:
                 relations = hashRelations(relations, vocab, list(tokenizer(linea.strip())))
 

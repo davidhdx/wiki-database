@@ -1,4 +1,4 @@
-from cleaning import fullCleaning
+from modules.cleaning import fullCleaning
 from datetime import datetime
 import xml.sax
 import time

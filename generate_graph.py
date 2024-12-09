@@ -1,8 +1,8 @@
-import os
-from utils import initTokenizer
-from graph import readVocab, storeRelations
-from steps import initProcess, getStage
+from modules.graph import readVocab, storeRelations
+from modules.utils import initTokenizer
+from modules.steps import initProcess, getStage
 import concurrent.futures
+import os
 
 initProcess()
 

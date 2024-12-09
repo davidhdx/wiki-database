@@ -1,5 +1,5 @@
-from sax_parser import TextOnlyHandler
-from utils import parseTime
+from modules.sax_parser import TextOnlyHandler
+from modules.utils import parseTime
 import xml.sax
 import time
 

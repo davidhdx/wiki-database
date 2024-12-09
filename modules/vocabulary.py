@@ -1,7 +1,29 @@
 from collections import defaultdict
-from utils import parseTime
+from modules.utils import parseTime
 import mmap
 import time
+
+def processAllVocabs(file_path):
+    local_frequencies = defaultdict(int)
+    with open(file_path, 'r', encoding = "utf-8") as file:
+        for line in file:
+            parts = line.split()
+            if len(parts) >= 2:
+                token = parts[0]
+                try:
+                    frequency = int(parts[1])
+                    local_frequencies[token] += frequency
+                except ValueError:
+                    print(f"Advertencia: línea malformada en {file_path}: {line.strip()}")
+    print(f"{file_path} finished")
+    return local_frequencies
+
+def mergeDicts(dict_list):
+    merged = defaultdict(int)
+    for d in dict_list:
+        for key, value in d.items():
+            merged[key] += value
+    return merged
 
 def fitVocabulary(input_path, output_path, tokenizer):
     start = time.time()

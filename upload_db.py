@@ -1,10 +1,10 @@
-import os
-from database import uploadNodes, uploadRelations, saveMST, countRelationships, URI, AUTH
-from graph import readVocab, bestId
-from steps import getStage, initProcess
+from modules.database import uploadNodes, uploadRelations, saveMST, countRelationships, URI, AUTH
+from modules.steps import getStage, initProcess
+from modules.graph import readVocab, bestId
 from neo4j import GraphDatabase
+import os
 
-vocab = "/home/est_licenciatura_david.delarosa/practicas_profesionales/vocabs/enwiki-10-top.txt"
+vocab = "/home/est_licenciatura_david.delarosa/practicas_profesionales/vocabs/all_vocab.txt"
 
 relation_types = ["DOT X", "DIRECT X", "ARTICLE X"]+[f"EXACT {i}" for i in range(3, 12, 2)]+[f"NONEXACT {i}" for i in range(3, 12, 2)]
 filenames = [os.path.join(getStage("graph"), f"{r.replace(' ', '_')}.txt") for r in relation_types]
