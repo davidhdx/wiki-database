@@ -91,8 +91,8 @@ def stepClean(filename):
     next_folder = __STAGES["cleaned"]
     for decompressed_file in queue:
         print(f"START CLEANER of {decompressed_file}")
-        prefix_path = os.path.join(next_folder, getRaw(decompressed_file))
-        cleaned_files = parseXML(decompressed_file, prefix_path)
+        output_path = os.path.join(next_folder, getRaw(decompressed_file))
+        cleaned_files = parseXML(decompressed_file, output_path)
         delete(decompressed_file)
         stepVocab(cleaned_files)
         
